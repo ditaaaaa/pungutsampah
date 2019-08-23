@@ -68,5 +68,36 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $data = [
+            "maxAttempt"=> "0",
+            "phoneNum"=> "085350439065",
+            "expireIn"=> "300",
+            "content"=> "Masukan nomor verifikasi anda{{otp}}",
+            "digit"=> "6"
+        ];
+
+        $payload = json_encode($data);
+
+        // Prepare new cURL resource
+        $ch = curl_init('https://api.thebigbox.id/sms-otp/1.0.0/otp/qfvkCVl1skXlcNRbwgXiQAzSBTwHxYeR');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+
+        // Set HTTP Header for POST request
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'x-api-key:qfvkCVl1skXlcNRbwgXiQAzSBTwHxYeR',
+            'Accept:application/json',
+            'Content-Type: application/json',
+            'Content-Length: ' . strlen($payload))
+        );
+
+        // Submit the POST request
+        $result = curl_exec($ch);
+
+        // Close cURL session handle
+        curl_close($ch);
     }
 }
