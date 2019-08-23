@@ -85,6 +85,7 @@ class RegisterController extends Controller
         curl_setopt($ch, CURLINFO_HEADER_OUT, true);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
 
         // Set HTTP Header for POST request
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
