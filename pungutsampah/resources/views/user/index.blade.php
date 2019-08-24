@@ -47,14 +47,34 @@
          
           
           </li>
-        </ul>
+       
         <ul class="navbar-nav ml-auto" >
-          <li class="nav-item mx-0 mx-lg-1" style="margin-top: 2px">
-            <a class="btn btn-primary" href="{{ route('register') }}">Daftar</a>
-          </li>
+         @guest
+            <li class="nav-item mx-0 mx-lg-1" style="margin-top: 2px">
+               <a class="btn btn-primary" href="{{ route('register') }}">Daftar</a>
+            </li>
+            @if (Route::has('register'))
+                
           <li class="nav-item mx-0 mx-lg-1" style="margin-top: 2px">
             <a class="btn btn-primary" href="{{ route('login') }}">Masuk</a>
-        </ul>
+        </li>
+            @endif
+          @else
+         
+            <ul>
+              <li><a href="{{ route('logout') }}  "onclick="event.preventDefault();document.getElementById('logout-form').submit();" >{{ __('Logout') }}</a></li>
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+               @csrf</form>
+              <li>
+
+                </li>
+            </ul>
+          </li>
+          @endguest
+          
+           
+       
+       
          
       </div>
     </div>
