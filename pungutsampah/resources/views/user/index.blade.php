@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Freelancer - Start Bootstrap Theme</title>
+  <title>Pungut Sampah</title>
 
   <!-- Custom fonts for this theme -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -39,17 +39,19 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Laporan</a>
           </li>
           
           </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto" >
           <li class="nav-item mx-0 mx-lg-1" style="margin-top: 2px">
             <a class="btn btn-primary" href="">Daftar</a>
+            <link href="register.blade.php">
           </li>
           <li class="nav-item mx-0 mx-lg-1" style="margin-top: 2px">
             <a class="btn btn-primary" href="">Masuk</a>
+
         </ul>
       </div>
     </div>
@@ -111,7 +113,7 @@
         </div>
 
         <!-- Portfolio Item 2 -->
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4">x
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white">
@@ -195,19 +197,11 @@
       <!-- About Section Content -->
       <div class="row">
         <div class="col-lg-4 ml-auto">
-          <p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p>
+          <p class="lead">Aplikasi pungut sampah ini merupakan aplikasi yang ditujukan kepada masyarakat. Dengan adanya aplikasi ini masyarakat bisa melaporkan dimanapun tempat yang terdapat sampah, dengan cara memfoto sampah tersebut dan memcantukan nama wilayah atau tempat lalu mengupload di aplikasi ini, maka pihak Dinas Kebersihan dan Pertamanan(DKP) akan datang ke wilayah yang terdapat sampah tersebut.</p>
         </div>
         <div class="col-lg-4 mr-auto">
-          <p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
+          <p class="lead">User juga di untungkan dengan mendapatkan 1 poin setiap melaporkan sampah tersebut. Yang mana 1 point seharga Rp10, yang bisa dikumpulkan dan ditukar dengan uang. Aplikasi ini pun bekerja sama dengan Bank Sampah, dengan begitu masyarakat bisa membuat kerajinan hasil dari daur ulang menggunakan sampah tersebut.</p>
         </div>
-      </div>
-
-      <!-- About Section Button -->
-      <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
-          <i class="fas fa-download mr-2"></i>
-          Free Download!
-        </a>
       </div>
 
     </div>
@@ -218,7 +212,7 @@
     <div class="container">
 
       <!-- Contact Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Laporan</h2>
 
       <!-- Icon Divider -->
       <div class="divider-custom">
