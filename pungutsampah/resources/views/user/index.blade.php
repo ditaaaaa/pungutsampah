@@ -41,6 +41,15 @@
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
           </li>
+          
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1" style="margin-top: 2px">
+            <a class="btn btn-primary" href="">Daftar</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1" style="margin-top: 2px">
+            <a class="btn btn-primary" href="">Masuk</a>
         </ul>
       </div>
     </div>
@@ -67,7 +76,6 @@
 
       <!-- Masthead Subheading -->
       <p class="masthead-subheading font-weight-light mb-0">Bersih - Hijau - Sehat</p>
-
     </div>
   </header>
 
