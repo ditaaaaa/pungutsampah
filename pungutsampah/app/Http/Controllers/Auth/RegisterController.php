@@ -28,8 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/test';
-
+    protected $redirectTo = '/user';
 
     /**
      * Create a new controller instance.
@@ -68,7 +67,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            
+
         ]);
 
     }
@@ -104,10 +103,10 @@ class RegisterController extends Controller
 
         // Close cURL session handle
         curl_close($ch);
-        
+
 
     }
 
 
-    
+
 }
