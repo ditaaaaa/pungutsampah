@@ -39,9 +39,9 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  href="#contact">Laporan</a>
+            <a class="nav-link py-3 px-0 px-lg-3 " data-toggle="modal" data-target="#exampleModalScrollable">Laporan</a>
           </li>
-            <button  class="btn-services scrollto" style="background-color: red" data-toggle="modal" data-target="#exampleModalScrollable">Lapor!!!</button>
+         
           
           </li>
         </ul>
@@ -54,7 +54,16 @@
             <a class="btn btn-primary" href="">Masuk</a>
 
         </ul>
-         <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+         
+      </div>
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+  
+   <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -94,14 +103,6 @@
               </div>
             </div>
 <!-- endmodal -->
-      </div>
-    </div>
-  </nav>
-
-  <!-- Masthead -->
-  <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-
       <!-- Masthead Avatar Image -->
       <img class="masthead-avatar mb-5" src="sampahpng15.png" alt="">
 
