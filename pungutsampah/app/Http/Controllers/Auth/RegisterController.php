@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {
@@ -52,7 +55,58 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'notelpon' => ['required', 'string', 'max:255'],
         ]);
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        $data = [
+            "maxAttempt"=> "0",
+            "phoneNum"=> "085350439065",
+            "expireIn"=> "300",
+            "content"=> "Masukan nomor verifikasi anda{{otp}}",
+            "digit"=> "6"
+        ];
+
+        $payload = json_encode($data);
+
+        // Prepare new cURL resource
+        $ch = curl_init('https://api.thebigbox.id/sms-otp/1.0.0/otp/yrJLI0BL32WuzHpTK4Ue79WV2N7KAuNU');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+
+        // Set HTTP Header for POST request
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'x-api-key:yrJLI0BL32WuzHpTK4Ue79WV2N7KAuNU',
+            'Accept:application/json',
+            'Content-Type: application/json',
+            'Content-Length: ' . strlen($payload))
+        );
+
+        // Submit the POST request
+        $result = curl_exec($ch);
+
+        // Close cURL session handle
+        curl_close($ch);
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
     }
 
     /**
@@ -65,6 +119,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'notelpon' => $data['notelpon'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
 

@@ -25,12 +25,22 @@
                     <div class="signup-form">
                         <h2 class="form-title">Daftar</h2>
                         <form method="POST" class="register-form" id="register-form" action="{{ route('register') }}"> 
-                             @csrf
+                             {{csrf_field()}}
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Username">
 
                                 @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                             <div class="form-group">
+                                <label for="notelpon"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input id="notelpon" type="text" class="form-control @error('notelpon') is-invalid @enderror" name="notelpon" value="{{ old('notelpon') }}" required autocomplete="notelpon" placeholder="No Telpon">
+
+                                @error('notelpon')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
