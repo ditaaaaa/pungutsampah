@@ -39,8 +39,9 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Laporan</a>
+            <a class="nav-link py-3 px-0 px-lg-3 " data-toggle="modal" data-target="#exampleModalScrollable">Laporan</a>
           </li>
+         
           
           </li>
         </ul>
@@ -53,6 +54,7 @@
             <a class="btn btn-primary" href="">Masuk</a>
 
         </ul>
+         
       </div>
     </div>
   </nav>
@@ -60,7 +62,47 @@
   <!-- Masthead -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
-
+  
+   <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalScrollableTitle">Laporkan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form method="POST" action="">
+                      @csrf
+                      <select name="id_user" style="background-color: white; color: white ;border-color: white">
+                        <option  ></option>
+                      </select>
+                      <textarea class="form-control" style="height: 250px;" name="keluhan"  placeholder="Apa Yang Anda Ingin Laporkan"></textarea>
+                      <br>
+                      <select name="id_dinas" class="form-control">
+                        <option >Pengajuan</option>
+                        <option value="01">Infrastruktur</option>
+                        <option value="02">Tambang Ilegal</option>
+                      </select>
+                      <br>
+                      <select name="jenis_pesan" class="form-control">
+                        <option>Jenis Pesan</option>
+                        <option value="Public">Public</option>
+                        <option value="Private">Private</option>
+                      </select>
+                      <br>
+                      <input name="alamat"  class="form-control" type="text" placeholder="Alamat" name="">
+                      <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="submit" name="submit" class="btn btn-primary">
+                  </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!-- endmodal -->
       <!-- Masthead Avatar Image -->
       <img class="masthead-avatar mb-5" src="sampahpng15.png" alt="">
 
