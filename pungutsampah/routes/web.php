@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::resource('user','UserController');
 
+Route::put('/test','Auth\RegisterController@test ')->name('api');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
