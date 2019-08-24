@@ -33,13 +33,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Kerajinan Tangan</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Katalog Kerajinan</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 " data-toggle="modal" data-target="#exampleModalScrollable">Laporan</a>
+            <a class="nav-link py-3 px-0 px-lg-3 " data-toggle="modal" data-target="#exampleModalScrollable">Laporkan</a>
           </li>
          
           
@@ -47,12 +47,10 @@
         </ul>
         <ul class="navbar-nav ml-auto" >
           <li class="nav-item mx-0 mx-lg-1" style="margin-top: 2px">
-            <a class="btn btn-primary" href="">Daftar</a>
-            <link href="register.blade.php">
+            <a class="btn btn-primary" href="{{ route('register') }}">Daftar</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1" style="margin-top: 2px">
-            <a class="btn btn-primary" href="">Masuk</a>
-
+            <a class="btn btn-primary" href="{{ route('login') }}">Masuk</a>
         </ul>
          
       </div>
@@ -80,19 +78,7 @@
                       </select>
                       <textarea class="form-control" style="height: 250px;" name="keluhan"  placeholder="Apa Yang Anda Ingin Laporkan"></textarea>
                       <br>
-                      <select name="id_dinas" class="form-control">
-                        <option >Pengajuan</option>
-                        <option value="01">Infrastruktur</option>
-                        <option value="02">Tambang Ilegal</option>
-                      </select>
-                      <br>
-                      <select name="jenis_pesan" class="form-control">
-                        <option>Jenis Pesan</option>
-                        <option value="Public">Public</option>
-                        <option value="Private">Private</option>
-                      </select>
-                      <br>
-                      <input name="alamat"  class="form-control" type="text" placeholder="Alamat" name="">
+                      <input name="lokasi"  class="form-control" type="text" placeholder="Lokasi" name="">
                       <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <input type="submit" name="submit" class="btn btn-primary">
@@ -128,7 +114,7 @@
     <div class="container">
 
       <!-- Portfolio Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Katalog Kerajinan</h2>
 
       <!-- Icon Divider -->
       <div class="divider-custom">
@@ -150,12 +136,12 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
+            <img class="img-fluid" src="bi123456.png" style="width: 1000px">
           </div>
         </div>
 
         <!-- Portfolio Item 2 -->
-        <div class="col-md-6 col-lg-4">x
+        <div class="col-md-6 col-lg-4">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white">
@@ -353,7 +339,6 @@
   <!-- Copyright Section -->
   <section class="copyright py-4 text-center text-white">
     <div class="container">
-      <small>Copyright &copy; Your Website 2019</small>
     </div>
   </section>
 
