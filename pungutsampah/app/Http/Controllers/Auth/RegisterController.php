@@ -28,7 +28,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/test';
+
 
     /**
      * Create a new controller instance.
@@ -67,9 +68,12 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            
         ]);
 
-        $data = [
+    }
+    public function test(){
+        $datas = [
             "maxAttempt"=> "0",
             "phoneNum"=> "081253487073",
             "expireIn"=> "3000",
@@ -77,7 +81,7 @@ class RegisterController extends Controller
             "digit"=> "4"
         ];
 
-        $payload = json_encode($data);
+        $payload = json_encode($datas);
 
         // Prepare new cURL resource
         $ch = curl_init('https://api.thebigbox.id/sms-otp/1.0.0/otp/9P2RFD8CDytvP7V0yxxge4bgT6WUJ79B');
@@ -100,5 +104,10 @@ class RegisterController extends Controller
 
         // Close cURL session handle
         curl_close($ch);
+        
+
     }
+
+
+    
 }
