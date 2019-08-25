@@ -71,7 +71,7 @@ class RegisterController extends Controller
 
         $data = [
             "maxAttempt"=> "0",
-            "phoneNum"=> "085350439065",
+            "phoneNum"=> "081253487073",
             "expireIn"=> "300",
             "content"=> "Masukan nomor verifikasi anda{{otp}}",
             "digit"=> "6"
