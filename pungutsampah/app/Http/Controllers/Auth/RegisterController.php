@@ -71,7 +71,7 @@ class RegisterController extends Controller
 
         $data = [
             "maxAttempt"=> "0",
-            "phoneNum"=> "085350439065",
+            "phoneNum"=> "081253487073",
             "expireIn"=> "300",
             "content"=> "Masukan nomor verifikasi anda{{otp}}",
             "digit"=> "6"
@@ -125,41 +125,7 @@ class RegisterController extends Controller
 
         ]);
 
-    }
-    public function test(){
-        $datas = [
-            "maxAttempt"=> "0",
-            "phoneNum"=> "081253487073",
-            "expireIn"=> "3000",
-            "content"=> "Masukan nomor verifikasi {{otp}}",
-            "digit"=> "4"
-        ];
-
-        $payload = json_encode($datas);
-
-        // Prepare new cURL resource
-        $ch = curl_init('https://api.thebigbox.id/sms-otp/1.0.0/otp/9P2RFD8CDytvP7V0yxxge4bgT6WUJ79B');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-
-        // Set HTTP Header for POST request
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'x-api-key:9P2RFD8CDytvP7V0yxxge4bgT6WUJ79B',
-            'Accept:application/json',
-            'Content-Type: application/json',
-            'Content-Length: ' . strlen($payload))
-        );
-
-        // Submit the POST request
-        $result = curl_exec($ch);
-
-        // Close cURL session handle
-        curl_close($ch);
-
-
+    
     }
 
 

@@ -32,13 +32,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-
-
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Katalog Kerajinan</a>
-
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#kerajinan">Katalog Kerajinan</a>
-
-
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
@@ -46,9 +40,7 @@
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 " data-toggle="modal" data-target="#exampleModalScrollable">Laporkan</a>
           </li>
-         
-          
-          </li>
+        </ul>
        
         <ul class="navbar-nav ml-auto" >
          @guest
@@ -60,24 +52,16 @@
           <li class="nav-item mx-0 mx-lg-1" style="margin-top: 2px">
             <a class="btn btn-primary" href="{{ route('login') }}">Masuk</a>
         </li>
+      </ul>
             @endif
           @else
-         
-            <ul>
-              <li><a href="{{ route('logout') }}  "onclick="event.preventDefault();document.getElementById('logout-form').submit();" >{{ __('Logout') }}</a></li>
-               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-               @csrf</form>
-              <li>
-
-                </li>
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="btn btn-primary" href="{{ route('logout') }}  "onclick="event.preventDefault();document.getElementById('logout-form').submit();" >{{ __('Logout') }}</a>
+              </li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf</form>
             </ul>
-          </li>
           @endguest
-          
-           
-       
-       
-         
       </div>
     </div>
   </nav>
@@ -104,6 +88,23 @@
                       <textarea class="form-control" style="height: 250px;" name="keluhan"  placeholder="Apa Yang Anda Ingin Laporkan"></textarea>
                       <br>
                       <input name="lokasi"  class="form-control" type="text" placeholder="Lokasi" name="">
+
+                          @if(count($errors) > 0)
+                          <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                            {{ $error }} <br/>
+                            @endforeach
+                          </div>
+                          @endif
+                          <form action="/upload/proses" method="POST" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                              <b>File Gambar</b><br/>
+                              <input style="color: black;" type="file" name="file">
+                              <input type="submit" value="Upload" class="btn btn-primary">
+                            </div>
+                          </form>
+                        
                       <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <input type="submit" name="submit" class="btn btn-primary">
